@@ -27,7 +27,7 @@ public class BookSearchFragment extends Fragment {
     private BookSearchResultsAdapter adapter;
 
     private TextInputEditText keywordEditText, authorEditText;
-    private Button searchButton,btn_next;
+    private Button searchButton;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class BookSearchFragment extends Fragment {
         keywordEditText = view.findViewById(R.id.fragment_booksearch_keyword);
         authorEditText = view.findViewById(R.id.fragment_booksearch_author);
         searchButton = view.findViewById(R.id.fragment_booksearch_search);
-        btn_next=view.findViewById(R.id.btn_next);
+
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,9 +71,6 @@ public class BookSearchFragment extends Fragment {
             }
         });
 
-        btn_next.setOnClickListener(v -> {
-            startActivity(new Intent(getContext(),CounterViewModelExampleActivity.class));
-        });
 
         view.findViewById(R.id.btn_post).setOnClickListener(v -> {
             startActivity(new Intent(getContext(),PostExampleActivity.class));

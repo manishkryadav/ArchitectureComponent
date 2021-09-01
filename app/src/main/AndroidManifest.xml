@@ -11,10 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ArchitectureComponentDemo">
-        <activity android:name=".views.ConstrainExampleActivity"></activity>
         <activity android:name=".views.PostExampleActivity" />
-        <activity android:name=".livedatdatabindingviewmodel.DemoPostActivity" />
-        <activity android:name=".views.CounterViewModelExampleActivity" />
+
         <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,21 +1,12 @@
 package com.example.architecturecomponentdemo.viewmodels;
 
-import android.app.Application;
-
-import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.architecturecomponentdemo.model.ConfigurationModel;
-import com.example.architecturecomponentdemo.model.VolumesResponse;
-import com.example.architecturecomponentdemo.repositories.BookRepository;
 import com.example.architecturecomponentdemo.repositories.PostRepository;
 
-import org.jetbrains.annotations.NotNull;
-
 public class PostViewModel extends ViewModel {
-    public LiveData<ConfigurationModel> configurationModelMutableLiveData;
+    public LiveData<String> configurationModelMutableLiveData;
     PostRepository postRepository;
 
     public void init() {
@@ -23,14 +14,14 @@ public class PostViewModel extends ViewModel {
         configurationModelMutableLiveData = postRepository.getVolumesResponseLiveData();
     }
 
-    public void getPostData(String apptype,String appversion){
+    public void getPostData(){
 
-        postRepository.getConfiguration(apptype,appversion);
+        postRepository.getConfiguration();
 
     };
 
 
-    public LiveData<ConfigurationModel> getConfigurationResponseLiveData() {
+    public LiveData<String> getConfigurationResponseLiveData() {
         return configurationModelMutableLiveData;
     }
 

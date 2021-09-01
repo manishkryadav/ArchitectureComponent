@@ -27,13 +27,13 @@ public class PostExampleActivity extends AppCompatActivity {
         postViewModel.init();
         postViewModel.getConfigurationResponseLiveData().observe(this,configurationModel -> {
             if (configurationModel != null) {
-                tv_apidata.setText(configurationModel.getData().getPrivacy_policy());
+                tv_apidata.setText(configurationModel);
             }
         });
 
 
         findViewById(R.id.btn_api).setOnClickListener(v -> {
-            postViewModel.getPostData("ANDROID","1.4");
+            postViewModel.getPostData();
         });
     }
 }

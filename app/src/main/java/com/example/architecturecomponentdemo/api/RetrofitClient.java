@@ -10,24 +10,25 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /// singolton class for retrofit///
 public class RetrofitClient {
 
-    private static final  String Base_url="http://jsonplaceholder.typicode.com/";
-//    private static final  String Base_url="https://sampat.demodesq.com/admin/public/api/user/";
+//    private static final  String Base_url="http://jsonplaceholder.typicode.com/";   // for post url
+    private static final String Base_url = "https://www.googleapis.com/";   //  for get url
+
     private static RetrofitClient mInstance;
-//    private final OkHttpClient client;
+    private final OkHttpClient client;
     private Retrofit retrofit;
 
 
     private RetrofitClient(){
-//      client = new OkHttpClient.Builder()
-//                .connectTimeout(1, TimeUnit.SECONDS)
-//                .readTimeout(1, TimeUnit.SECONDS)
-//                .writeTimeout(1, TimeUnit.SECONDS)
-//                .build();
+      client = new OkHttpClient.Builder()
+                .connectTimeout(1, TimeUnit.SECONDS)
+                .readTimeout(1, TimeUnit.SECONDS)
+                .writeTimeout(1, TimeUnit.SECONDS)
+                .build();
 
         retrofit=new Retrofit.Builder()
                 .baseUrl(Base_url)
                 .addConverterFactory(GsonConverterFactory.create())
-//                .client(client)
+                .client(client)
                 .build();
     }
 
